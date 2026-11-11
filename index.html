@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Guía visual y educativa sobre los componentes internos y externos de una computadora.">
+<title>Componentes de una computadora | Guía interactiva</title>
+<style>
+:root{--bg:#0b1220;--panel:#121e31;--panel2:#172740;--ink:#edf4ff;--muted:#b6c6dc;--cyan:#55d6e8;--blue:#76a9ff;--line:#29415f;--gold:#ffd166}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#0b1220,#101b2c 60%,#0b1220);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:var(--cyan)}a:hover{color:#fff}.wrap{width:min(1120px,92%);margin:auto}
+header{padding:62px 0 48px;background:radial-gradient(ellipse at 80% 10%,#1d5270 0,transparent 45%),linear-gradient(120deg,#132744,#0b1220)}
+nav{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 35px}nav a{color:var(--ink);text-decoration:none;border:1px solid var(--line);padding:7px 12px;border-radius:20px;font-size:.9rem}
+h1{font-size:clamp(2.2rem,6vw,4.5rem);line-height:1.05;max-width:850px;margin:0 0 18px}h1 span{color:var(--cyan)}.lead{max-width:760px;color:var(--muted);font-size:1.15rem}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}.hero-art{background:#10223a;border:1px solid var(--line);border-radius:24px;padding:18px;box-shadow:0 18px 50px #0005}
+section{padding:55px 0}h2{font-size:clamp(1.7rem,4vw,2.5rem);margin:0 0 10px}h3{margin:0 0 8px;color:#fff}.intro{color:var(--muted);max-width:820px;margin:0 0 24px}
+table{width:100%;border-collapse:separate;border-spacing:0;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin:22px 0}
+th,td{text-align:left;vertical-align:top;padding:15px;border-bottom:1px solid var(--line)}th{background:#1b3553;color:var(--cyan);font-weight:700}tr:last-child td{border-bottom:0}td:first-child{font-weight:700;color:#fff;width:19%}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}.card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}.card svg{width:100%;height:125px;display:block;margin-bottom:12px}.tag{display:inline-block;background:#1d405b;color:var(--cyan);padding:3px 9px;border-radius:30px;font-size:.8rem;margin-bottom:8px}
+.callout{background:linear-gradient(110deg,#173d58,#172740);border-left:4px solid var(--cyan);padding:18px 22px;border-radius:12px;margin:24px 0}
+.video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:18px;border:1px solid var(--line);background:#000}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.links{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.links a{display:block;background:var(--panel);padding:15px;border:1px solid var(--line);border-radius:12px;text-decoration:none}
+footer{border-top:1px solid var(--line);padding:28px 0;color:var(--muted);font-size:.9rem}
+small,.muted{color:var(--muted)}.caption{font-size:.85rem;color:var(--muted);margin-top:7px}
+@media(max-width:760px){.hero-grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.links{grid-template-columns:1fr}th,td{padding:10px;font-size:.92rem}}
+@media(max-width:520px){.cards{grid-template-columns:1fr}table{font-size:.88rem}td:first-child{width:25%}header{padding-top:35px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <nav aria-label="Navegación principal">
+   <a href="#funcion">¿Cómo funciona?</a><a href="#internos">Componentes internos</a><a href="#externos">Periféricos</a><a href="#montaje">Cómo se conectan</a><a href="#video">Vídeo</a><a href="#fuentes">Fuentes</a>
+  </nav>
+  <div class="hero-grid">
+   <div><p class="tag">GUÍA DE INFORMÁTICA</p><h1>Los componentes de una <span>computadora</span></h1>
+    <p class="lead">Conoce las piezas que hacen posible que un ordenador procese información, almacene archivos, muestre imágenes y se comunique con el mundo.</p>
+   </div>
+   <div class="hero-art">
+    <svg viewBox="0 0 500 330" role="img" aria-label="Ilustración de una computadora de sobremesa">
+     <rect x="25" y="22" width="450" height="260" rx="18" fill="#203e60" stroke="#55d6e8" stroke-width="5"/>
+     <rect x="43" y="40" width="414" height="222" rx="9" fill="#071321"/>
+     <path d="M90 90h150v18H90zm0 42h280v12H90zm0 34h220v12H90z" fill="#55d6e8" opacity=".8"/>
+     <circle cx="390" cy="100" r="35" fill="#244c70" stroke="#76a9ff" stroke-width="5"/><path d="M390 75v50m-25-25h50" stroke="#fff" stroke-width="5"/>
+     <path d="M210 282v22m-65 8h195" stroke="#76a9ff" stroke-width="9" stroke-linecap="round"/>
+    </svg>
+    <p class="caption">Un ordenador combina hardware (partes físicas) y software (programas).</p>
+  </div>
+  </div>
+ </div>
+</header>
+<main class="wrap">
+<section id="funcion">
+ <h2>1. ¿Qué es el hardware?</h2>
+ <p class="intro">El <strong>hardware</strong> es el conjunto de elementos físicos de un equipo: se pueden tocar, conectar o sustituir. El <strong>software</strong> son los programas e instrucciones que indican al hardware qué debe hacer. Ambos trabajan juntos.</p>
+ <div class="callout"><strong>Idea clave:</strong> la CPU procesa instrucciones, la memoria RAM mantiene temporalmente los datos en uso y el almacenamiento conserva la información incluso cuando apagamos el equipo.</div>
+</section>
+<section id="internos">
+ <h2>2. Componentes internos principales</h2>
+ <p class="intro">Estas piezas suelen encontrarse dentro de la torre o integradas en el portátil. La tabla resume su función y un ejemplo de uso.</p>
+ <table>
+  <thead><tr><th>Componente</th><th>¿Qué es?</th><th>Función principal</th><th>Ejemplo / característica</th></tr></thead>
+  <tbody>
+   <tr><td>Placa base</td><td>La placa de circuitos principal del ordenador.</td><td>Conecta los componentes y permite que intercambien datos y energía.</td><td>Incluye zócalo del procesador, ranuras de RAM y conectores.</td></tr>
+   <tr><td>Procesador (CPU)</td><td>Unidad central de procesamiento; ejecuta instrucciones.</td><td>Realiza cálculos y coordina muchas operaciones del sistema.</td><td>Se suele describir por núcleos, hilos y frecuencia.</td></tr>
+   <tr><td>Memoria RAM</td><td>Memoria rápida y temporal.</td><td>Guarda los datos y programas que se están utilizando.</td><td>Su contenido se pierde al apagar el equipo.</td></tr>
+   <tr><td>Almacenamiento</td><td>Unidad donde se guardan el sistema, programas y archivos.</td><td>Conserva los datos aunque el ordenador esté apagado.</td><td>SSD: rápido y sin piezas móviles. HDD: usa discos magnéticos.</td></tr>
+   <tr><td>Tarjeta gráfica (GPU)</td><td>Procesador especializado en gráficos y tareas paralelas.</td><td>Genera imágenes y vídeo para la pantalla.</td><td>Puede estar integrada en la CPU o ser una tarjeta dedicada.</td></tr>
+   <tr><td>Fuente de alimentación</td><td>Unidad que transforma la corriente eléctrica.</td><td>Distribuye energía adecuada a los componentes.</td><td>Su potencia se expresa en vatios (W).</td></tr>
+   <tr><td>Refrigeración</td><td>Ventiladores y disipadores; a veces refrigeración líquida.</td><td>Evita que CPU y GPU alcancen temperaturas excesivas.</td><td>Un buen flujo de aire ayuda a mantener el rendimiento.</td></tr>
+  </tbody>
+ </table>
+ <div class="cards">
+  <article class="card"><svg viewBox="0 0 240 125" role="img" aria-label="Dibujo de procesador"><rect x="65" y="18" width="110" height="88" rx="12" fill="#254d70" stroke="#55d6e8" stroke-width="4"/><rect x="88" y="40" width="64" height="44" rx="5" fill="#0b1728" stroke="#76a9ff" stroke-width="3"/><path d="M50 35h15m-15 20h15m-15 20h15m110-40h15m-15 20h15m-15 20h15M85 5v13m25-13v13m25-13v13m-50 88v13m25-13v13m25-13v13" stroke="#ffd166" stroke-width="4"/></svg><span class="tag">PROCESAMIENTO</span><h3>CPU</h3><p>Interpreta y ejecuta instrucciones. Es una pieza clave para el funcionamiento general del equipo.</p></article>
+  <article class="card"><svg viewBox="0 0 240 125" role="img" aria-label="Dibujo de memoria RAM"><rect x="20" y="38" width="200" height="55" rx="8" fill="#244b62" stroke="#55d6e8" stroke-width="3"/><g fill="#102033" stroke="#76a9ff" stroke-width="2"><rect x="38" y="48" width="30" height="30"/><rect x="78" y="48" width="30" height="30"/><rect x="118" y="48" width="30" height="30"/><rect x="158" y="48" width="30" height="30"/></g><path d="M45 94v13m22-13v13m22-13v13m22-13v13m22-13v13m22-13v13m22-13v13" stroke="#ffd166" stroke-width="4"/></svg><span class="tag">MEMORIA TEMPORAL</span><h3>RAM</h3><p>Permite cambiar rápidamente entre aplicaciones y trabajar con varios datos a la vez.</p></article>
+  <article class="card"><svg viewBox="0 0 240 125" role="img" aria-label="Dibujo de unidad SSD"><rect x="40" y="20" width="160" height="88" rx="12" fill="#254d70" stroke="#55d6e8" stroke-width="4"/><rect x="58" y="37" width="75" height="50" rx="5" fill="#0b1728"/><path d="M150 45h30m-30 15h30m-30 15h20" stroke="#ffd166" stroke-width="5" stroke-linecap="round"/><circle cx="183" cy="91" r="5" fill="#55d6e8"/></svg><span class="tag">ALMACENAMIENTO</span><h3>SSD / HDD</h3><p>Guarda documentos, fotografías, aplicaciones y el sistema operativo.</p></article>
+ </div>
+</section>
+<section id="externos">
+ <h2>3. Componentes externos y periféricos</h2>
+ <p class="intro">Los periféricos permiten introducir información, recibir resultados o comunicarnos con otros dispositivos.</p>
+ <table><thead><tr><th>Periférico</th><th>Tipo</th><th>Para qué sirve</th></tr></thead><tbody>
+  <tr><td>Teclado</td><td>Entrada</td><td>Escribir texto, números y órdenes.</td></tr>
+  <tr><td>Ratón / touchpad</td><td>Entrada</td><td>Mover el puntero, seleccionar y abrir elementos.</td></tr>
+  <tr><td>Micrófono / cámara</td><td>Entrada</td><td>Capturar sonido e imagen.</td></tr>
+  <tr><td>Monitor</td><td>Salida</td><td>Mostrar imágenes, ventanas y vídeo.</td></tr>
+  <tr><td>Altavoces / auriculares</td><td>Salida</td><td>Reproducir sonido.</td></tr>
+  <tr><td>Impresora</td><td>Salida</td><td>Pasar documentos o imágenes al papel.</td></tr>
+  <tr><td>Memoria USB</td><td>Entrada y salida</td><td>Guardar y transportar archivos.</td></tr>
+ </tbody></table>
+</section>
+<section id="montaje">
+ <h2>4. ¿Cómo trabajan juntos?</h2>
+ <p class="intro">Al abrir un programa, el sistema carga parte de sus datos desde el SSD o HDD a la RAM. La CPU procesa las instrucciones y la GPU prepara los gráficos que se muestran en el monitor. La placa base permite la comunicación y la fuente suministra energía.</p>
+ <table><thead><tr><th>Etapa</th><th>Componente implicado</th><th>Qué ocurre</th></tr></thead><tbody>
+  <tr><td>1. Encendido</td><td>Fuente y placa base</td><td>La energía llega a los circuitos y el equipo inicia el sistema.</td></tr>
+  <tr><td>2. Carga</td><td>SSD/HDD y RAM</td><td>Los programas y datos necesarios se cargan en memoria.</td></tr>
+  <tr><td>3. Proceso</td><td>CPU</td><td>Se ejecutan instrucciones y cálculos.</td></tr>
+  <tr><td>4. Imagen</td><td>GPU y monitor</td><td>Se genera y muestra el resultado visual.</td></tr>
+ </tbody></table>
+ <div class="callout"><strong>Consejo:</strong> antes de limpiar o manipular el interior de un ordenador, apágalo, desconéctalo de la corriente y pide ayuda a una persona adulta o a un técnico si no tienes experiencia.</div>
+</section>
+<section id="video">
+ <h2>5. Vídeo para ampliar</h2>
+ <p class="intro">Este vídeo de búsqueda reúne explicaciones visuales sobre las partes de un ordenador. Si el vídeo no se carga en tu navegador, abre YouTube desde el enlace inferior.</p>
+ <div class="video"><iframe src="https://www.youtube-nocookie.com/embed?listType=search&list=componentes%20de%20una%20computadora%20explicados%20en%20espa%C3%B1ol" title="Vídeos sobre los componentes de una computadora" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe></div>
+ <p><a href="https://www.youtube.com/results?search_query=componentes+de+una+computadora+explicados+en+espa%C3%B1ol" target="_blank" rel="noopener">Ver vídeos sobre componentes de una computadora en YouTube ↗</a></p>
+</section>
+<section id="fuentes">
+ <h2>6. Enlaces y fuentes para aprender más</h2>
+ <div class="links">
+  <a href="https://edu.gcfglobal.org/es/informatica-basica/que-es-hardware-y-software/1/" target="_blank" rel="noopener"><strong>GCFGlobal</strong><br><span class="muted">Introducción a hardware y software.</span></a>
+  <a href="https://www.intel.es/content/www/es/es/gaming/resources/how-to-build-a-gaming-pc.html" target="_blank" rel="noopener"><strong>Intel</strong><br><span class="muted">Información sobre piezas y montaje de un PC.</span></a>
+  <a href="https://es.wikipedia.org/wiki/Placa_base" target="_blank" rel="noopener"><strong>Wikipedia: placa base</strong><br><span class="muted">Descripción y elementos de la placa principal.</span></a>
+  <a href="https://es.wikipedia.org/wiki/Unidad_de_estado_s%C3%B3lido" target="_blank" rel="noopener"><strong>Wikipedia: SSD</strong><br><span class="muted">Cómo funciona el almacenamiento de estado sólido.</span></a>
+ </div>
+</section>
+</main>
+<footer><div class="wrap">Trabajo educativo · Tema: componentes de una computadora · Diseño adaptable a móviles y ordenadores.<br><small>Las ilustraciones de esta página son dibujos vectoriales originales creados para explicar los componentes.</small></div></footer>
+</body></html>
